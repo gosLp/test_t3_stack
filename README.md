@@ -1,6 +1,8 @@
-# Create T3 App
+# prominence.AI
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+
+this is a side project meant to test out certain ai ideas along with around with the t3 stack.
 
 ## What's next? How do I make an app with this?
 
