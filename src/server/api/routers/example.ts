@@ -24,5 +24,7 @@ export const exampleRouter = createTRPCRouter({
       return{
         prat_test: `this is really cool ${input.mehtod}`,
       }
-    })
+    }),
+
+  
 });
