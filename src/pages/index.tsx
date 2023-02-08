@@ -7,8 +7,10 @@ import { api } from "../utils/api";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const value = api.example.mathroute.useQuery({valuation: 3000});
+  
   const bello = api.example.hellotest.useQuery({mehtod:"T3 Rocks"});
-  return (
+          return (
     <>
       <Head>
         <title>Create T3 App</title>
