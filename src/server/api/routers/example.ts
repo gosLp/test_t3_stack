@@ -24,6 +24,7 @@ export const exampleRouter = createTRPCRouter({
       return{
         prat_test: `this is really cool ${input.mehtod}`,
       }
+
   }),
 
   mathroute: publicProcedure
@@ -35,4 +36,6 @@ export const exampleRouter = createTRPCRouter({
         }
     }),
 
+
+  
 });
