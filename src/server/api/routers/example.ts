@@ -24,7 +24,18 @@ export const exampleRouter = createTRPCRouter({
       return{
         prat_test: `this is really cool ${input.mehtod}`,
       }
+
+  }),
+
+  mathroute: publicProcedure
+    .input(z.object({ valuation: z.number()}))
+    .query(({input})=>{
+        return{
+            company_value: `WOW the company is now worth ${input.valuation}`,
+
+        }
     }),
+
 
   
 });
