@@ -1,6 +1,10 @@
 import {z} from "zod";
 import { publicProcedure, protectedProcedure, createTRPCRouter } from "../trpc";
-
+import fs from 'fs';
+export interface FileObject {
+    name: string;
+    size: number;
+}
 
 export const videoRouter = createTRPCRouter({
     list: publicProcedure
@@ -15,6 +19,12 @@ export const videoRouter = createTRPCRouter({
                     ],
             }
         }),
+
+    upload: publicProcedure
+            .mutation(({input}) =>{
+                let writeStream = fs.createWriteStream()
+            })
+            
     
     
 });

@@ -21,6 +21,7 @@ const Upload: NextPage = () =>{
         e.preventDefault();
         //handle the upload of file here
         console.log(file);
+        
     }
 
     return(
@@ -35,28 +36,28 @@ const Upload: NextPage = () =>{
             <label htmlFor="video" className="text-lg font-bold text-gray-700">
                  Upload your video
             </label>
-        <input
-            id="video"
-            type="file"
-            accept="video/*"
-            onChange={handleChange}
-            className="mt-4 p-2 border border-gray-300 rounded-md"
-        />
-        {file && (
-            <p className="mt-2 text-sm text-green-500">
-                {file.name} selected ({Math.round(file.size / 1024)} KB)
-            </p>
-        )}
-      <button
-        type="submit"
-        disabled={!file}
-        className={`mt-6 py-2 px-4 bg-blue-600 text-white rounded-md ${
-          !file && "opacity-50 cursor-not-allowed"
-        }`}
-      >
-        Upload
-      </button>
-    </form>
+            <input
+                 id="video"
+                type="file"
+                accept="video/*"
+                onChange={handleChange}
+                className="mt-4 p-2 border border-gray-300 rounded-md"
+            />
+            {file && (
+                <p className="mt-2 text-sm text-green-500">
+                    {file.name} selected ({Math.round(file.size / 1024)} KB)
+                </p>
+            )}
+            <button
+                type="submit"
+                disabled={!file}
+                className={`mt-6 py-2 px-4 bg-blue-600 text-white rounded-md ${
+            !file && "opacity-50 cursor-not-allowed"
+            }`}
+            >
+                Upload
+            </button>
+        </form>
     </>
     );
 }
