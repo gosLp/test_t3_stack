@@ -12,15 +12,24 @@ interface FileObject {
 
 const Upload: NextPage = () =>{
     const [file, setfile] = useState<FileObject| null>(null);
-
+    const [video,setVideo] = useState(null);
+    const {mutateAsync} = api.video.upload.useMutation();   
+    
     const handleChange= (e: React.ChangeEvent<HTMLInputElement>) =>{
         setfile(e.target.files?.[0]!);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         //handle the upload of file here
         console.log(file);
+        // try{
+        //     const result = await mutateAsync({file: file});
+        //     setVideo(result.url);
+
+        // }catch(err){
+        //     console.error(err);
+        // }
         
     }
 
@@ -57,6 +66,9 @@ const Upload: NextPage = () =>{
             >
                 Upload
             </button>
+            <div id="video">
+                {video && <video src={video} autoPlay={true}></video>}
+            </div>
         </form>
     </>
     );
